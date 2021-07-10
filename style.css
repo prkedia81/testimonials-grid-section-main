@@ -1,0 +1,137 @@
+:root {
+    /* Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: white;
+
+    /* Neutral */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+body {
+    font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: var(--light-grayish-blue);
+    padding: 7%;
+    line-height: 1.5;
+}
+
+.container {
+    display: grid;
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    grid-gap: 0.9rem;
+    grid-template-areas:
+    "cust1 cust1 cust2 cust5"
+    "cust3 cust4 cust4 cust5";
+}
+
+.cust1 {
+    grid-area: cust1;
+    background-color: var(--moderate-violet);
+    border-radius: 10px;
+}
+
+.cust2 {
+    grid-area: cust2;
+    background-color: var(--very-dark-grayish-blue);
+    border-radius: 10px;
+}
+
+.cust3 {
+    grid-area: cust3;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.cust4 {
+    grid-area: cust4;
+    background-color: var(--very-dark-blackish-blue);
+    border-radius: 10px;
+}
+
+.cust5 {
+    grid-area: cust5;
+    background-color: var(--white);
+    border-radius: 10px;
+    
+} 
+
+.customer {
+    display: grid;
+    color: var(--light-gray);
+    grid-gap: 1rem;
+    padding: 30px;
+    grid-template-rows: 25% 25% 50%;   
+    box-shadow: 0px 5px 30px 1px rgba(0, 0, 0, 0.3); 
+}
+
+img {
+    border: 3px solid;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+    width: 40px;
+}
+
+.name {
+    padding-top: 4px;
+}
+
+.verified {
+    opacity: 0.5;
+}
+
+.content {
+    opacity: 0.7;
+}
+
+.bold-content {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.quotes {
+    padding: 0;
+    position: absolute;
+    border: none;
+    height: 102px;
+    border-radius: 0;
+    width: 104px;
+    right: 55%;
+    margin-top: -30px;
+    float: none;
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "cust1"
+        "cust2"
+        "cust3"
+        "cust4"
+        "cust5";
+    }
+
+    .quotes {
+        right: 11%;
+        top: 11%;
+    }
+}
